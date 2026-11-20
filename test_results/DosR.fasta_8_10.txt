@@ -1,0 +1,39 @@
+Motif_finder.py ../test_data/DosR.fasta 8 10
+Read 10 sequences from ../test_data/DosR.fasta, k = 8
+Background q(b): A=0.200, C=0.327, G=0.299, T=0.174
+
+=== 1. K-mer counting: top 10 over-represented 8-mers ===
+    kmer  observed  expected  p_value
+CGGTGGTC         3  0.063074 0.000040
+TCGGCCAG         3  0.079049 0.000078
+GGCCACCA         3  0.099070 0.000150
+CTTTGCTG         2  0.021487 0.000228
+TGGGACTT         2  0.022457 0.000248
+GGGACTTT         2  0.022457 0.000248
+TGTCATCG         2  0.024592 0.000297
+CTGTCATC         2  0.026929 0.000356
+CCGACGGG         3  0.135434 0.000374
+CTATCGGA         2  0.028145 0.000389
+
+=== 2. Gibbs sampling (20 runs x 1000 iterations) ===
+Consensus motif: TATCGGCC
+Score (mismatches to consensus): 15
+
+Profile matrix (rows = bases, columns = motif positions):
+      1     2     3     4     5     6     7     8
+A  0.07  0.57  0.07  0.07  0.14  0.07  0.29  0.07
+C  0.21  0.07  0.07  0.79  0.21  0.29  0.50  0.79
+G  0.07  0.14  0.07  0.07  0.57  0.57  0.07  0.07
+T  0.64  0.21  0.79  0.07  0.07  0.07  0.14  0.07
+
+Motif site found in each sequence:
+  TTTCGCCC  start=85   seq1
+  TATCGGTC  start=14   seq2
+  CATCGGCC  start=61   seq3
+  TATCGCAC  start=14   seq4
+  TATCCGAC  start=122  seq5
+  CTTCGGCC  start=146  seq6
+  TATCACCC  start=74   seq7
+  TGTCGGCC  start=190  seq8
+  TATCCGCC  start=224  seq9
+  TATCGGAC  start=230  seq10

@@ -1,0 +1,29 @@
+python Motif_finder.py ../test_data/DosR.fasta 20 10
+Read 10 sequences from ../test_data/DosR.fasta, k = 20
+Background q(b): A=0.200, C=0.327, G=0.299, T=0.174
+
+=== 1. K-mer counting: top 10 over-represented 20-mers ===
+No 20-mer occurs more than once (exact repeats are too rare at this k).
+
+=== 2. Gibbs sampling (50 runs x 1000 iterations) ===
+Consensus motif: CTCGGGACCTACGTCCCTAG
+Log-odds score (higher is better): 112.12
+
+Profile matrix (rows = bases, columns = motif positions):
+     1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16    17    18    19    20
+A  0.07  0.21  0.07  0.14  0.07  0.07  0.71  0.07  0.14  0.29  0.43  0.29  0.07  0.21  0.07  0.07  0.07  0.07  0.57  0.14
+C  0.36  0.21  0.43  0.07  0.07  0.07  0.07  0.71  0.36  0.07  0.29  0.50  0.07  0.14  0.79  0.79  0.71  0.36  0.07  0.14
+G  0.29  0.21  0.36  0.64  0.71  0.79  0.07  0.07  0.14  0.21  0.07  0.07  0.79  0.29  0.07  0.07  0.14  0.07  0.29  0.50
+T  0.29  0.36  0.14  0.14  0.14  0.07  0.14  0.14  0.36  0.43  0.21  0.14  0.07  0.36  0.07  0.07  0.07  0.50  0.07  0.21
+
+Motif site found in each sequence:
+  GCCGGGACTTCAGGCCCTAT  start=116  seq1
+  CACGGGTCAAACGACCCTAG  start=160  seq2
+  GGCGGGACGTAAGTCCCTAA  start=197  seq3
+  CGCTGGATTACCGACCGCAG  start=216  seq4
+  TTCGTGACCGACGTCCCCAG  start=186  seq5
+  TTGAGGACCTTCGGCCCCAC  start=138  seq6
+  TCGGGGACTTCTGTCCCTAG  start=168  seq7
+  CATGGGACTTTCGGCCCTGT  start=161  seq8
+  GTGGGGACCAACGCCCCTGG  start=158  seq9
+  CTGGGGACCGAAGTCCCCGG  start=201  seq10

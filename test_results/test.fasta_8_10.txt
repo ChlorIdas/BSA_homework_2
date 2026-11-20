@@ -1,0 +1,49 @@
+python Motif_finder.py ../test_data/test.fasta 8 10
+Read 20 sequences from ../test_data/test.fasta, k = 8
+Background q(b): A=0.253, C=0.249, G=0.254, T=0.244
+
+=== 1. K-mer counting: top 10 over-represented 8-mers ===
+    kmer  observed  expected      p_value
+TTGACGCA         6  0.028357 7.048093e-13
+TGACGCAC         4  0.028879 2.831915e-08
+CTTGACGC         3  0.027964 3.568940e-06
+CCTATTGC         2  0.026918 3.558529e-04
+CTGTGCTC         2  0.027078 3.600551e-04
+TCACTATG         2  0.027296 3.658351e-04
+GCCTATTG         2  0.027459 3.701546e-04
+GGCTGTCT         2  0.027622 3.745249e-04
+GCTGTGCT         2  0.027622 3.745249e-04
+GCGGTCTT         2  0.027622 3.745249e-04
+
+=== 2. Gibbs sampling (20 runs x 1000 iterations) ===
+Consensus motif: TTGACGCA
+Score (mismatches to consensus): 21
+
+Profile matrix (rows = bases, columns = motif positions):
+      1     2     3     4     5     6     7     8
+A  0.04  0.04  0.04  0.67  0.04  0.08  0.08  0.79
+C  0.08  0.08  0.08  0.08  0.83  0.08  0.79  0.08
+G  0.08  0.08  0.71  0.08  0.04  0.75  0.04  0.04
+T  0.79  0.79  0.17  0.17  0.08  0.08  0.08  0.08
+
+Motif site found in each sequence:
+  TCGATGCA  start=37   seq1 start=72 mutations=2
+  TGGACGTA  start=41   seq2 start=41 mutations=2
+  TTGACGCA  start=61   seq3 start=61 mutations=0
+  TTCTCGCA  start=84   seq4 start=71 mutations=2
+  CTTACGCA  start=91   seq5 start=85 mutations=2
+  TTTCCGCA  start=21   seq6 start=21 mutations=2
+  TTGACTCA  start=75   seq7 start=75 mutations=1
+  TTGACGCC  start=0    seq8 start=0 mutations=1
+  TTGACGCA  start=90   seq9 start=90 mutations=0
+  TTGACACA  start=47   seq10 start=47 mutations=1
+  TTGTCGCA  start=28   seq11 start=28 mutations=1
+  TTGACGCA  start=20   seq12 start=20 mutations=0
+  TTGACGCA  start=9    seq13 start=9 mutations=0
+  TTGACGAA  start=4    seq14 start=4 mutations=1
+  TTGGCGCT  start=91   seq15 start=91 mutations=2
+  TTTTCGCA  start=13   seq16 start=13 mutations=2
+  TTGACGCA  start=28   seq17 start=28 mutations=0
+  TTGACGCA  start=35   seq18 start=35 mutations=0
+  GTGACGCA  start=59   seq19 start=59 mutations=1
+  TTGACCCA  start=28   seq20 start=28 mutations=1
